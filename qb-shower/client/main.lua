@@ -81,7 +81,15 @@ AddEventHandler('qb-shower:client:washSelf', function()
         showering = false
     end)
 end)
-
+--ANIM TEST
+RegisterNetEvent("showeranim")
+AddEventHandler('showeranim', function()
+    local pid = PlayerPedId()
+    RequestAnimDict("anim@mp_yacht@shower@male")
+    while (not HasAnimDictLoaded("anim@mp_yacht@shower@male")) do Citizen.Wait(0) end
+    TaskPlayAnim(pid,"anim@mp_yacht@shower@male","male_shower_idle_a",1.0,-1.0, 5000, 0, 1, true
+end)
+--ANIM TEST
 --Create the map blip for the shower
 Citizen.CreateThread(function()
     for k, v in pairs(Config.Locations) do
