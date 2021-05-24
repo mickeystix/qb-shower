@@ -1,7 +1,7 @@
 # qb-shower
 Shower For QB-Core
 Made by Mickey#4910 (Mickeystix)
-(VIEW THIS README AS RAW IN GIT)
+(VIEW THIS README AS RAW IN GIT, IM TOO LAZY TO FORMAT)
 
 To add additional showers, simply edit the config.lua.
 In Config.Locations, add additional location, like so.
