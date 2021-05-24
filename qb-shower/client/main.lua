@@ -24,7 +24,7 @@ Citizen.CreateThread(function()
 		TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 		Citizen.Wait(0)
     end
-    
+    --Checking distance for 3d text draw, and also making sure that player isn't somehow, in a vehicle.
     while true do
         local PlayerPed = PlayerPedId()
         local PlayerPos = GetEntityCoords(PlayerPed)
@@ -81,6 +81,7 @@ AddEventHandler('qb-shower:client:washSelf', function()
         showering = false
     end)
 end)
+
 --ANIM TEST
 RegisterNetEvent("showeranim")
 AddEventHandler('showeranim', function()
@@ -90,7 +91,8 @@ AddEventHandler('showeranim', function()
     TaskPlayAnim(pid,"anim@mp_yacht@shower@male","male_shower_idle_a",1.0,-1.0, 5000, 0, 1, true
 end)
 --ANIM TEST
---Create the map blip for the shower
+	
+--Create the map blip for the shower location. Can be safely commented out to avoid map cluttering
 Citizen.CreateThread(function()
     for k, v in pairs(Config.Locations) do
         shower = AddBlipForCoord(Config.Locations[k]["coords"]["x"], Config.Locations[k]["coords"]["y"], Config.Locations[k]["coords"]["z"])
