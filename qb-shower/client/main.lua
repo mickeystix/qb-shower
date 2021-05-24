@@ -68,6 +68,12 @@ AddEventHandler('qb-shower:client:washSelf', function()
     }, {}, {}, {}, function() -- Done
         --This below is what clears the damage deval from player model. Want your shower to do other stuff, like, say, relieve stress? Add that below.
         ClearPedBloodDamage(PlayerPed)
+        ClearPedDamageDecalByZone(PlayerPed, 0, "ALL")
+        ClearPedDamageDecalByZone(PlayerPed, 1, "ALL")
+        ClearPedDamageDecalByZone(PlayerPed, 2, "ALL")
+        ClearPedDamageDecalByZone(PlayerPed, 3, "ALL")
+        ClearPedDamageDecalByZone(PlayerPed, 4, "ALL")
+        ClearPedDamageDecalByZone(PlayerPed, 5, "ALL")
 
         showering = false
     end, function() -- Cancel
